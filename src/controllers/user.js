@@ -8,7 +8,7 @@ module.exports.getAllUser = (req, res) => {
         .catch((err) => console.log(err));
 };
 module.exports.getUser = (req, res) => {
-    user.findById(req.params._id)
+    user.findById(req.params.id)
         .then((data) => {
             res.json(data);
         })
