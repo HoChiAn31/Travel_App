@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Country = require('./country');
 
 const countryLocationSchema = new mongoose.Schema({
-    countryId: {
+    country_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'country',
         required: true,
@@ -12,7 +12,7 @@ const countryLocationSchema = new mongoose.Schema({
         ref: 'country',
         required: true,
     },
-    title: {
+    name: {
         required: true,
         type: String,
     },

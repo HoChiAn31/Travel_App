@@ -15,8 +15,7 @@ db.connect();
 const app = express();
 
 app.use(express.json());
-// app.use('/', (req, res) => res.send('Hello World!'));
-app.use('/api', (req, res) => res.send('Hello World!'));
+app.use('/', (req, res) => res.send('Hello World!'));
 app.use('/user', userRoute);
 app.use('/auth', authRoute);
 app.use('/country', countryRoute);
@@ -27,5 +26,5 @@ app.use('/room', roomRoute);
 app.use('/book', bookRoute);
 
 const port = process.env.PORT || 3000;
-// const port = 3000;
+
 app.listen(port, () => console.log(`Listening to port ${port}`));

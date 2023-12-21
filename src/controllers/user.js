@@ -1,12 +1,11 @@
 const user = require('../models/user');
 
 module.exports.getAllUser = (req, res) => {
-    res.send('Welcome');
-    // user.find()
-    //     .then((data) => {
-    //         res.json(data);
-    //     })
-    //     .catch((err) => console.log(err));
+    user.find()
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => console.log(err));
 };
 module.exports.getUser = (req, res) => {
     user.findById(req.params._id)

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const hotelSchema = new mongoose.Schema({
-    countryId: {
+    country_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'country',
         required: true,
@@ -11,7 +11,7 @@ const hotelSchema = new mongoose.Schema({
         ref: 'country',
         required: true,
     },
-    title: {
+    name: {
         required: true,
         type: String,
     },

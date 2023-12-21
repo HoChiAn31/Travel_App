@@ -14,7 +14,13 @@ module.exports.getReview = (req, res) => {
         })
         .catch((err) => console.log(err));
 };
-
+module.exports.getReviewByHotel = (req, res) => {
+    Review.find({ hotel_id: req.params.hotel_id })
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => console.log(err));
+};
 module.exports.addReview = (req, res) => {
     Review.find().then(() => {
         const user = new user({
