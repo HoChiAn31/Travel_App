@@ -13,7 +13,7 @@
         },
         {
             "src": "/user/(.*)",
-            "dest": "/user/$1"
+            "dest": "/user"
         }
     ]
 }
