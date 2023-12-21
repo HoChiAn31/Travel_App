@@ -17,7 +17,6 @@ const app = express();
 app.use(express.json());
 app.use('/', (req, res) => res.send('Hello World!'));
 app.use('/user', userRoute);
-
 app.use('/auth', authRoute);
 app.use('/country', countryRoute);
 app.use('/location', locationRoute);
