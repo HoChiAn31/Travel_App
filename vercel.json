@@ -7,15 +7,9 @@
         }
     ],
     "routes": [
-        { "src": "/api/(.*)", "dest": "/api" },
-        { "src": "/user/(.*)", "dest": "/user" },
-        { "src": "/auth/(.*)", "dest": "/auth" },
-        { "src": "/country/(.*)", "dest": "/country" },
-        { "src": "/location/(.*)", "dest": "/location" },
-        { "src": "/hotel/(.*)", "dest": "/hotel" },
-        { "src": "/review/(.*)", "dest": "/review" },
-        { "src": "/room/(.*)", "dest": "/room" },
-        { "src": "/book/(.*)", "dest": "/book" },
-        { "src": "/(.*)", "dest": "/" }
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
     ]
 }
