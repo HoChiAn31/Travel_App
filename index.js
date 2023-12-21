@@ -15,7 +15,7 @@ db.connect();
 const app = express();
 
 app.use(express.json());
-app.use('/', (req, res) => res.send('Hello World!'));
+// app.use('/', (req, res) => res.send('Hello World!'));
 app.use('/api/user', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/country', countryRoute);
