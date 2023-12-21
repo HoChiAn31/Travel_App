@@ -5,11 +5,13 @@ const mongoString = process.env.DATABASE_URL;
 
 async function connect() {
     mongoose
-        .connect(mongoString, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            // useCreateIndex: true,
-        })
+        .connect(mongoString)
+        //    {
+        //     useNewUrlParser: true,
+        //     useUnifiedTopology: true,
+        //     // useCreateIndex: true,
+        // }
+
         .then(() => {
             console.log('Connected to MongoDB');
         })
