@@ -6,11 +6,6 @@
             "use": "@vercel/node"
         }
     ],
-    "functions": {
-        "api": {
-            "maxDuration": 30
-        }
-    },
     "routes": [
         { "src": "/api/(.*)", "dest": "/api" },
         { "src": "/user/(.*)", "dest": "/user" },
