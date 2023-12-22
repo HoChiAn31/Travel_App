@@ -48,6 +48,10 @@ const hotelSchema = new mongoose.Schema({
         required: true,
         type: Number,
     },
+    review: {
+        required: false,
+        type: Number,
+    },
 });
 
 module.exports = mongoose.model('hotel', hotelSchema);
