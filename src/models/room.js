@@ -31,7 +31,10 @@ const roomSchema = new mongoose.Schema({
         required: true,
         type: Number,
     },
-
+    rating: {
+        required: true,
+        type: Number,
+    },
     availability: {
         type: Map,
         of: Boolean,
