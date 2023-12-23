@@ -5,6 +5,7 @@ const room = require('../controllers/room');
 router.get('/', room.getAllRoom);
 router.get('/:id', room.getOneRoom);
 router.get('/categories/:type', room.getCategoryInRoom);
+router.get('/caterorieshotel/:hotel_id', room.getCategoryInRoomHotel);
 router.post('/', room.addRoom);
 router.put('/:id', room.editRoom);
 router.patch('/:id', room.editRoom);

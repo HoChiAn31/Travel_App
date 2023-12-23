@@ -22,6 +22,14 @@ module.exports.getCategoryInRoom = (req, res) => {
         })
         .catch((err) => console.log(err));
 };
+module.exports.getCategoryInRoomHotel = (req, res) => {
+    const hotel_id = req.params.hotel_id;
+    Room.find({ hotel_id })
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => console.log(err));
+};
 module.exports.addRoom = (req, res) => {
     Room.find().then(() => {
         const room = new Room({
