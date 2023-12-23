@@ -23,6 +23,10 @@ const roomSchema = new mongoose.Schema({
         required: true,
         type: String,
     },
+    image: {
+        required: true,
+        type: String,
+    },
     price: {
         required: true,
         type: Number,
