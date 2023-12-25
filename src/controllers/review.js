@@ -8,7 +8,7 @@ module.exports.getAllReview = (req, res) => {
         .catch((err) => console.log(err));
 };
 module.exports.getReview = (req, res) => {
-    Review.findById(req.params._id)
+    Review.findById(req.params.id)
         .then((data) => {
             res.json(data);
         })
