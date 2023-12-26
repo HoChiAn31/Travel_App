@@ -13,7 +13,7 @@ exports.login = (req, res) => {
             .then((user) => {
                 if (user) {
                     res.json({
-                        token: jwt.sign({ id_user: user._id, user: username }, 'secret_key'),
+                        token: jwt.sign({ id_user: user._id, nameUser: user.name, user: username }, 'secret_key'),
                     });
                 } else {
                     res.status(401);
