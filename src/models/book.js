@@ -6,11 +6,6 @@ const bookSchema = new mongoose.Schema({
         required: true,
         ref: 'user',
     },
-    user_name: {
-        type: mongoose.Schema.Types.String,
-        required: true,
-        ref: 'user',
-    },
     hotel_id: {
         type: mongoose.Schema.Types.ObjectId,
         required: false,

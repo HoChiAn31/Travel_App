@@ -27,7 +27,9 @@ module.exports.addBook = (req, res) => {
         const book = new Book({
             user_id: req.body.user_id,
             hotel_id: req.body.hotel_id,
+            hotel_name: req.body.hotel_name,
             room_id: req.body.room_id,
+            room_name: req.body.room_name,
             CheckInDate: req.body.CheckInDate,
             CheckOutDate: req.body.CheckOutDate,
             TotalAmount: req.body.TotalAmount,
