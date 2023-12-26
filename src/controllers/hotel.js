@@ -22,6 +22,35 @@ module.exports.getCategoryInHotel = (req, res) => {
         })
         .catch((err) => console.log(err));
 };
+
+const search = (q, type = 'less') => {
+    let query;
+
+    switch (type) {
+        case 'country':
+            // Search by country
+            query = { country: { $regex: new RegExp(q, 'i') } };
+            break;
+        // Add more cases as needed for other search types
+        default:
+            throw new Error('Invalid search type');
+    }
+
+    return Hotel.find(query);
+};
+
+module.exports.searchCountry = (req, res) => {
+    const { q, type } = req.query;
+
+    search(q, type)
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((error) => {
+            res.status(400).json({ error: error.message });
+        });
+};
+
 module.exports.addHotel = (req, res) => {
     Hotel.find().then(() => {
         const hotel = new Hotel({

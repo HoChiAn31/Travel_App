@@ -3,6 +3,8 @@ const router = express.Router();
 const hotel = require('../controllers/hotel');
 
 router.get('/', hotel.getAllHotel);
+router.get('/search', hotel.searchCountry);
+
 router.get('/:id', hotel.getOneHotel);
 router.get('/categories/:country', hotel.getCategoryInHotel);
 router.post('/', hotel.addHotel);
