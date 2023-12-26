@@ -30,6 +30,7 @@ module.exports.addReview = (req, res) => {
             user_id: req.body.user_id,
             username: req.body.username,
             image: req.body.image,
+            date: req.body.date,
         });
         user.save()
             .then((data) => res.json(data))

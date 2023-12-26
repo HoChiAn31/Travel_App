@@ -40,8 +40,7 @@ const roomSchema = new mongoose.Schema({
         type: Number,
     },
     availability: {
-        type: Map,
-        of: Boolean,
+        type: [Date],
         required: true,
     },
 });
