@@ -26,5 +26,4 @@ app.use('/room', roomRoute);
 app.use('/book', bookRoute);
 
 const port = process.env.PORT || 3000;
-
 app.listen(port, () => console.log(`Listening to port ${port}`));
