@@ -31,6 +31,7 @@ const search = (q, type = 'less') => {
             // Search by country
             query = { country: { $regex: new RegExp(q, 'i') } };
             break;
+
         // Add more cases as needed for other search types
         default:
             throw new Error('Invalid search type');

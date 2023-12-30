@@ -22,6 +22,22 @@ module.exports.getCategoryInRoom = (req, res) => {
         })
         .catch((err) => console.log(err));
 };
+const search = (hotel_id, q, type = 'less') => {
+    let query;
+
+    switch (type) {
+        case 'type':
+            query = { hotel_id, type: { $regex: new RegExp(q, 'i') } };
+            break;
+        case 'availability':
+            query = { hotel_id, availability: { $regex: new RegExp(q, 'i') } };
+            break;
+        default:
+            throw new Error('Invalid search type');
+    }
+
+    return Room.find(query);
+};
 module.exports.getCategoryInRoomHotel = (req, res) => {
     const hotel_id = req.params.hotel_id;
     Room.find({ hotel_id })
@@ -30,6 +46,47 @@ module.exports.getCategoryInRoomHotel = (req, res) => {
         })
         .catch((err) => console.log(err));
 };
+module.exports.getCategoryInRoomHotelSearch = (req, res) => {
+    const roomQuery = req.params.hotel_id;
+    const { q, type } = req.query;
+
+    search(roomQuery, q, type)
+        .then((searchResults) => {
+            res.json(searchResults);
+        })
+        .catch((error) => {
+            console.error(error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        });
+};
+
+module.exports.getSearchRoom = (req, res) => {
+    const { q, type } = req.query;
+    search(q, type)
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((error) => {
+            res.status(400).json({ error: error.message });
+        });
+};
+module.exports.getSearchRoomId = (req, res) => {
+    const { q, type } = req.query;
+    const hotel_id = req.params.hotel_id;
+    Room.find({ hotel_id })
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => console.log(err));
+    search(q, type)
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((error) => {
+            res.status(400).json({ error: error.message });
+        });
+};
+
 module.exports.addRoom = (req, res) => {
     Room.find().then(() => {
         const room = new Room({

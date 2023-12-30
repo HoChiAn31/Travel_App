@@ -4,7 +4,7 @@ const countryLocation = require('../controllers/location');
 
 router.get('/', countryLocation.getAllCountry);
 router.get('/:id', countryLocation.getOneCountry);
-router.get('/categories/:country', countryLocation.getCategoryInCountry);
+router.get('/categories/:isoCountryCode', countryLocation.getCategoryInCountry);
 router.post('/', countryLocation.addCountry);
 router.put('/:id', countryLocation.editCountry);
 router.patch('/:id', countryLocation.editCountry);

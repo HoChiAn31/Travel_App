@@ -1,8 +1,10 @@
 const countryLocation = require('../models/location');
 
 module.exports.getAllCountry = (req, res) => {
+    const sort = req.query.sort == 'desc' ? 1 : -1;
     countryLocation
         .find()
+        .sort({ rating: sort })
         .then((data) => {
             res.json(data);
         })
@@ -17,9 +19,9 @@ module.exports.getOneCountry = (req, res) => {
         .catch((err) => console.log(err));
 };
 module.exports.getCategoryInCountry = (req, res) => {
-    const country = req.params.country;
+    const isoCountryCode = req.params.isoCountryCode;
     countryLocation
-        .find({ country })
+        .find({ isoCountryCode })
         .then((data) => {
             res.json(data);
         })

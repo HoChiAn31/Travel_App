@@ -5,6 +5,10 @@ const countrySchema = new mongoose.Schema({
         required: true,
         type: String,
     },
+    isoCountryCode: {
+        required: true,
+        type: String,
+    },
     description: {
         required: true,
         type: String,
