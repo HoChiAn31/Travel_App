@@ -11,6 +11,11 @@ const hotelSchema = new mongoose.Schema({
         ref: 'country',
         required: true,
     },
+    isoCountryCode: {
+        type: mongoose.Schema.Types.String,
+        ref: 'country',
+        required: true,
+    },
     name: {
         required: true,
         type: String,

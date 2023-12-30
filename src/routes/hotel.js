@@ -6,7 +6,7 @@ router.get('/', hotel.getAllHotel);
 router.get('/search', hotel.searchCountry);
 
 router.get('/:id', hotel.getOneHotel);
-router.get('/categories/:country', hotel.getCategoryInHotel);
+router.get('/categories/:isoCountryCode', hotel.getCategoryInHotel);
 router.post('/', hotel.addHotel);
 router.put('/:id', hotel.editHotel);
 router.patch('/:id', hotel.editHotel);

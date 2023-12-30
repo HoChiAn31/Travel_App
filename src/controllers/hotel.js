@@ -15,8 +15,8 @@ module.exports.getOneHotel = (req, res) => {
         .catch((err) => console.log(err));
 };
 module.exports.getCategoryInHotel = (req, res) => {
-    const country = req.params.country;
-    Hotel.find({ country })
+    const isoCountryCode = req.params.isoCountryCode;
+    Hotel.find({ isoCountryCode })
         .then((data) => {
             res.json(data);
         })
