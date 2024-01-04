@@ -50,12 +50,11 @@ module.exports.editBook = (req, res) => {
         });
 };
 module.exports.deleteBook = (req, res) => {
-    res.send(req.params.id);
-    // Book.findByIdAndDelete(req.params.id, { new: true })
-    //     .then((data) => {
-    //         res.send(`Document has been deleted.`);
-    //     })
-    //     .catch((error) => {
-    //         res.json({ message: error.message });
-    //     });
+    Book.findByIdAndDelete(req.params.id, { new: true })
+        .then((data) => {
+            res.send(`Document has been deleted.`);
+        })
+        .catch((error) => {
+            res.json({ message: error.message });
+        });
 };
