@@ -10,6 +10,7 @@ const hotelRoute = require('./src/routes/hotel');
 const reviewRoute = require('./src/routes/review');
 const roomRoute = require('./src/routes/room');
 const bookRoute = require('./src/routes/book');
+const favoritesRoute = require('./src/routes/favorite');
 
 db.connect();
 const app = express();
@@ -24,6 +25,9 @@ app.use('/hotel', hotelRoute);
 app.use('/review', reviewRoute);
 app.use('/room', roomRoute);
 app.use('/book', bookRoute);
+app.use('/favorite', favoritesRoute);
 
 const port = process.env.PORT || 3000;
+// const port = 3000;
+
 app.listen(port, () => console.log(`Listening to port ${port}`));
