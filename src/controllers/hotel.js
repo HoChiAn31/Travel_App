@@ -55,7 +55,7 @@ module.exports.searchCountry = (req, res) => {
 module.exports.addHotel = (req, res) => {
     Hotel.find().then(() => {
         const hotel = new Hotel({
-            countryId: req.body.countryId,
+            country_id: req.body.country_id,
             country: req.body.country,
             title: req.body.title,
             isoCountryCode: req.body.isoCountryCode,
