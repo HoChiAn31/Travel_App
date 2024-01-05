@@ -58,13 +58,12 @@ module.exports.addHotel = (req, res) => {
             countryId: req.body.countryId,
             country: req.body.country,
             title: req.body.title,
+            isoCountryCode: req.body.isoCountryCode,
             description: req.body.description,
-            latitude: req.body.latitude,
-            longitude: req.body.longitude,
+            latitude: req.body.coordinates[0].latitude,
+            longitude: req.body.coordinates[0].longitude,
             location: req.body.location,
             image: req.body.image,
-            rating: req.body.rating,
-            price: req.body.price,
         });
         hotel
             .save()
