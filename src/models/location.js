@@ -17,7 +17,7 @@ const countryLocationSchema = new mongoose.Schema({
         ref: 'country',
         required: true,
     },
-    name: {
+    title: {
         required: true,
         type: String,
     },
