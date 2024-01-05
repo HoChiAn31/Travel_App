@@ -19,6 +19,7 @@ module.exports.addCountry = (req, res) => {
     country.find().then(() => {
         const countries = new country({
             name: req.body.name,
+            isoCountryCode: req.body.isoCountryCode,
             description: req.body.description,
             image: req.body.image,
             region: req.body.region,
