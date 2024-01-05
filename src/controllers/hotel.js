@@ -60,8 +60,9 @@ module.exports.addHotel = (req, res) => {
             title: req.body.title,
             isoCountryCode: req.body.isoCountryCode,
             description: req.body.description,
-            latitude: req.body.coordinates[0].latitude,
-            longitude: req.body.coordinates[0].longitude,
+            coordinates: req.body.coordinates,
+            // latitude: req.body.coordinates[0].latitude,
+            // longitude: req.body.coordinates[0].longitude,
             location: req.body.location,
             image: req.body.image,
         });
