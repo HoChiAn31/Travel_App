@@ -50,7 +50,7 @@ const hotelSchema = new mongoose.Schema({
         type: Number,
     },
     price: {
-        required: true,
+        required: false,
         type: Number,
     },
     review: {
