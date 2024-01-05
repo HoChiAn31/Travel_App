@@ -33,7 +33,7 @@ module.exports.addCountry = (req, res) => {
             country_id: req.body.country_id,
             country: req.body.country,
             isoCountryCode: req.body.isoCountryCode,
-            title: req.body.name,
+            title: req.body.title,
             description: req.body.description,
             location: req.body.location,
             image: req.body.image,
