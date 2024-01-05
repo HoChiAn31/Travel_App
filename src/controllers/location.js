@@ -1,10 +1,10 @@
 const countryLocation = require('../models/location');
 
 module.exports.getAllCountry = (req, res) => {
-    const sort = req.query.sort == 'desc' ? 1 : -1;
+    // const sort = req.query.sort == 'desc' ? 1 : -1;
     countryLocation
         .find()
-        .sort({ rating: sort })
+        // .sort({ rating: sort })
         .then((data) => {
             res.json(data);
         })
