@@ -57,7 +57,7 @@ module.exports.addHotel = (req, res) => {
         const hotel = new Hotel({
             country_id: req.body.country_id,
             country: req.body.country,
-            name: req.body.name,
+            title: req.body.name,
             isoCountryCode: req.body.isoCountryCode,
             description: req.body.description,
             coordinates: req.body.coordinates,
