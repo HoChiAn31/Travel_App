@@ -30,13 +30,13 @@ module.exports.getCategoryInCountry = (req, res) => {
 module.exports.addCountry = (req, res) => {
     countryLocation.find().then(() => {
         const countries = new countryLocation({
-            countryId: req.body.countryId,
+            country_id: req.body.country_id,
             country: req.body.country,
-            title: req.body.title,
+            isoCountryCode: req.body.isoCountryCode,
+            name: req.body.name,
+            description: req.body.description,
             location: req.body.location,
             image: req.body.image,
-            rating: req.body.rating,
-            review: req.body.review,
         });
         countries
             .save()

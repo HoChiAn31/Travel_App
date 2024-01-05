@@ -21,6 +21,10 @@ const countryLocationSchema = new mongoose.Schema({
         required: true,
         type: String,
     },
+    description: {
+        required: true,
+        type: String,
+    },
     location: {
         required: true,
         type: String,
